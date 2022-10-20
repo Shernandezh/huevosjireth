@@ -1,0 +1,210 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+.main{
+    width: 100%;
+}
+
+/*--------------------------------------------------SIDEBAR--------------------------------------------------*/
+.sidebar{
+    position: fixed;
+    height: 100%;
+    width: 200px;
+    background-color: #ff9710;
+    overflow: hidden;
+    transition: all .5s ease;
+}
+.sidebar img{
+    width: 180px;
+    width: 170px;
+    margin-top: 1rem;
+}
+.sidebar ul{
+    margin-top: 20px;
+    padding-left: 0;
+    top: 0;
+    width: 100%;
+}
+.sidebar ul li{
+    width: 100%;
+}
+.sidebar ul li:hover{
+    background-color: rgb(255, 190, 68);
+    transform: scale(1.08);
+    transition: all .2s ease;
+}
+.sidebar ul li a{
+    display: block;
+    width: 100%;
+    display: flex;
+    color: black;
+    text-decoration: none;
+}
+.sidebar ul li a:hover{
+    color: white;
+}
+.sidebar ul li a i{
+    color: black;
+    min-width: 60px;
+    display: block;
+    font-size: 25px;
+    line-height: 60px;
+    height: 60px;
+    text-align: center;
+}
+.sidebar ul li a .item{
+    display: block;
+    padding: 0 10px;
+    line-height: 60px;
+    height: 60px;
+    white-space: nowrap;
+}
+.sidebar ul li a:hover i {
+    color: white;
+}
+.content.active{
+    width: calc(100% - 60px);
+    left: 60px;
+}
+.sidebar.active{
+    width: 60px;
+}
+#logo.active{
+    width: 55px;
+    transition: all 0.3s ease;
+}
+
+/*--------------------------------------------------NAVBAR--------------------------------------------------*/
+.content{
+    position: absolute;
+    width: calc(100% - 200px);
+    left: 200px;
+    min-height: 100vh;
+    transition: 0.5s ease;
+}
+.navbar{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1% 20px;
+    background-color: rgb(238, 238, 238);
+    box-shadow: 0 2px 4px rgb(0 0 0 / 30%);
+}
+.navbar .n1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.navbar .n2{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbar img{
+    width: 50px;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 50%;
+    cursor: pointer;
+}
+#btn-menu{
+    justify-content: flex-start;
+    margin-right: 15px;
+    font-size: 34px;
+    cursor: pointer;
+}
+.n1 h2{
+    margin-bottom: 0;
+    font-weight: 100;
+    font-size: 25px;
+    font-weight: bold;
+}
+.n1 h2{
+    margin-bottom: 0;
+    font-weight: 100;
+    font-size: 25px;
+    font-weight: bold;
+}
+.n2{
+    display: flex;
+    align-items: center;
+}
+.n2 h4{
+    margin: 0 0.5rem 0 0;
+    font-weight: 200;
+    font-size: 18px;
+    font-weight: bold;
+}
+.n2 a, i{
+    align-items: center;
+    margin: 0;
+}
+.n2 i{
+    font-size: 22px;
+    color: black;
+}
+/*--------------------------------------------------TICKETS--------------------------------------------------*/
+.tickets {
+    font-size: 15px;
+}
+.tickets h2{
+    background-color: lightgrey;
+    padding: .5rem 1.5rem;
+}
+/*Tickets vigentes*/
+.tarjetasA{
+    display: flex;
+    overflow-x: auto;
+}
+.tkt1{
+    border-radius: 5px;
+    padding: 2%;
+    margin: 2%;
+    box-shadow: 0 0px 1px 1px rgba(0, 0, 0, 0.5);
+}
+.tkt1 .idtkt, h3{
+    text-align: center;
+}
+.tkt1 p{
+    margin-bottom: 5px;
+}
+
+/*Tickets retirados*/
+.tarjetasB{
+    display: flex;
+}
+.tkt2{
+    border-radius: 5px;
+    padding: 2%;
+    margin: 2%;
+    box-shadow: 0 0px 1px 1px rgba(0, 0, 0, 0.5);
+}
+.tkt2 .idtkt, h3{
+    text-align: center;
+}
+.tkt2 p{
+    margin-bottom: 5px;
+}
+
+/*Tickets cancelados*/
+.tarjetasC{
+    display: flex;
+}
+.tkt3{
+    border-radius: 5px;
+    padding: 2%;
+    margin: 2%;
+    box-shadow: 0 0px 1px 1px rgba(0, 0, 0, 0.5);
+}
+.tkt3 .idtkt, h3{
+    text-align: center;
+}
+.tkt3 p{
+    margin-bottom: 5px;
+}

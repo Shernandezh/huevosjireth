@@ -1,0 +1,299 @@
+/*--------------------------------------------------PRODUCTOS--------------------------------------------------*/
+.barrita{
+    background:var(--fondo);
+    text-align: center;
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-bottom: 30px;
+}
+:root{
+    --fondo:linear-gradient(#ff9710, #fdac50);
+}
+.productos{
+    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+}
+.pedaso{
+    text-align: center;
+    color: white;
+    border-radius: 10px;
+    margin: 1rem;
+    width: 70%;
+    padding: 3%;
+}
+#reservar{
+    margin: 4em 0;
+}
+.btn-rsv{
+    width: 250px;
+    height: 70px;
+    border-radius: 10px;
+    background-color: rgb(255, 190, 68);
+    font-size: 20px;
+    border: none;
+    transition: .1s;
+    transition-timing-function: ease-in-out;
+}
+.btn-rsv:hover{
+    cursor: pointer;
+    border: 1px solid black;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.01);
+}
+
+/*--------------------------------------------------RECETAS--------------------------------------------------*/
+.nreceta{
+    margin-bottom: 40px;
+    background:var(--fondo);
+    color: white;
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.recetas{
+    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    margin-bottom: 3em;
+}
+.receta{
+    text-align: center;
+    border-radius: 10px;
+    padding: 20px;
+    justify-items: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/bg_recetas.jpg);
+    width: 60%;
+    margin: 1rem;
+}
+.receta h1{
+    color: white;
+    font-size: 1.3rem;
+}
+.receta img{
+    height: 200px;
+    width: 250px;
+    border-radius: 20%;
+    border: 2px solid #fdac50;
+    margin-bottom: 1rem;
+}
+.descripcion{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 3px;
+    margin-bottom: 8px;
+}
+.precio{
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: rgb(99, 206, 85);
+    text-shadow: 1px .5px  rgb(63, 83, 63);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+}
+.re{
+    background-color: transparent;
+    width: 150px;
+    height: 30px;
+    text-align: center;
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+    text-decoration: none;
+    padding: 4px;
+    border: 1px #ff9e4a solid;
+    border-radius: 10px;
+    transition: all .3s;
+}
+.re:hover{
+    background-color: rgba(255, 221, 0, 0.912);
+    color: rgb(255, 255, 255);
+}
+
+
+/*--------------------------------------------------MISION--------------------------------------------------*/
+.nmivi{
+    color: black;
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.misionvision{
+    color: black;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 25% 25%;
+    text-align: justify;
+    gap: 70px;
+    font-size: 1.6rem;
+    place-content: center;
+    margin-bottom: 50px;
+}
+.mision{
+    border: #ff9e4a solid 1px;
+    padding: 20px;
+    border-radius: 20px;
+}
+.vision{
+    border: #ff9e4a solid 1px;
+    padding: 20px;
+    border-radius: 20px;
+}
+.mision h1{
+    text-align: center;
+}
+.vision h1{
+    text-align: center;
+}
+
+.nreceta h1{
+    font-size: 2rem;
+}
+
+
+
+.nmivi h1{
+    font-size: 2rem;
+}
+.barrita h1{
+    font-size: 2rem;
+}
+
+
+.panal1{
+    width: 150px;
+}
+
+.carrito{
+    background:var(--fondo);
+    width: 150px;
+    height: 30px;
+    text-align: center;
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+    text-decoration: none;
+    padding: 1px;
+    border-radius: 10px;
+    transition: all .5s;
+    
+}
+
+.carrito:hover{
+    transform: scale(.9);
+    background-color: white;
+    color: black;
+}
+
+.huevos{
+    margin-top: 120px;
+    margin-bottom: 50px;
+   
+}
+
+center .reservbutton{
+    background-color: orange;
+    width: 300px;
+    margin-top: 2500px;
+    padding: 25px;
+    border-radius: 30px;
+    font-size: 22px;
+    text-decoration: none;
+    color: white;
+}
+
+.reservbutton:hover{
+    background-color: transparent;
+    transition: all .5s;
+    color: white;
+    transform: scale(1.2);
+    cursor: pointer
+}
+
+@media screen and (max-width:1280px) {
+
+    .recetas{
+        grid-template-columns: 45% 45%;
+    }
+
+    .receta1 img{
+        height: 160px;
+    }
+    
+}
+
+@media screen and (max-width:1024px) {
+
+    .misionvision{
+        grid-template-columns: 35% 35%;
+    }
+    
+}
+
+@media screen and (max-width:600px) {
+
+    .recetas{
+        grid-template-columns: 70%;
+    }
+    
+}
+
+
+
+@media screen and (max-width:540px) {
+
+.misionvision{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 65%;
+    gap: 20px;
+    place-content: center;
+    margin-top:100px;
+    margin-bottom: 80px;
+}
+
+.nreceta h1{
+    font-size: 1.2rem;
+    padding: 10px;
+}
+
+}
+
+@media screen and (max-width:420px) {
+
+    .recetas{
+        grid-template-columns: 85%;
+    }
+
+    .misionvision{
+        grid-template-columns: 80%;
+    }
+    
+}
+
+@media screen and (max-width:290px) {
+
+    .pedaso{
+        height: 318px;
+    }
+
+    .pedaso2{
+        height: 318px;
+    }
+
+    .pedaso3{
+        height: 318px;
+    }
+
+    .pedaso4{
+        height: 318px;
+    }
+    
+    .recetas{
+        grid-template-columns: 90%;
+    }
+
+    .receta1 img{
+        height: 120px;
+    }
+}
+

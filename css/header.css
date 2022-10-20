@@ -1,0 +1,6 @@
+.nav-item a:hover{
+    text-decoration: underline;
+}
+.nav-item i{
+    font-size: 17px;
+}

@@ -1,0 +1,7 @@
+:root{
+    --fondo:linear-gradient(#ff9710, #fdac50);
+}
+footer{
+    background:var(--fondo);
+    color: white;
+}
