@@ -41,14 +41,14 @@ $rsv="SELECT * FROM reservas WHERE idReserva='$id'";
                 </li>
                 <li>
                     <a href="/hj/view//template/personaldata.php">
-                        <i class='bx bxs-message-dots' title="Clientes"></i>
-                        <span class="item">Actualizar Correo</span>
+                    <i class='bx bxs-envelope'></i>
+                        <span class="item">Cambiar Correo</span>
                     </a>
                 </li>
                 <li>
                     <a href="/hj/view//template/personalContra.php">
-                        <i class='bx bxs-message-dots' title="Clientes"></i>
-                        <span class="item">Actualizar Contraseña</span>
+                    <i class='bx bx-key' ></i>
+                        <span class="item">Cambiar Clave</span>
                     </a>
                 </li>
                 <li>
@@ -98,7 +98,7 @@ $rsv="SELECT * FROM reservas WHERE idReserva='$id'";
                                 <option></option>
                             </select>
                             <br>
-                            <label class="form-label">Cantidad</label>
+                            <label class="form-label">Panales</label>
                             <input id="cantidad" type="number" name="amount" min="1" max="5" pattern="^[1-5]" oninput="calcular()" style="outline: none;">
                             <br><br>
                             <label class="form-label">Valor total</label>

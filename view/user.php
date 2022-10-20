@@ -97,7 +97,7 @@ $I = array(
                                 <option></option>
                             </select>
                             <br>
-                            <label class="form-label">Cantidad</label>
+                            <label class="form-label">Panales</label>
                             <input id="cantidad" type="number" name="amount" min="1" max="5" pattern="^[0-9]" oninput="calcular()" style="outline: none;">
                             <br><br>
                             <label class="form-label">Valor total</label>

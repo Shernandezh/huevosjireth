@@ -86,7 +86,7 @@ $reservs3="SELECT * FROM reservas WHERE Estado='Cancelado' ORDER BY idReserva DE
                             <th scope="col">Cliente</th>
                             <th scope="col">Producto</th>
                             <th scope="col">Precio</th>
-                            <th scope="col">Cantidad</th>
+                            <th scope="col">Panales</th>
                             <th scope="col">Total</th>
                             <th scope="col">Fecha</th>
                             <th scope="col">Hora</th>

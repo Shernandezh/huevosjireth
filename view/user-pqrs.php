@@ -41,14 +41,14 @@ $user="SELECT * FROM usuarios WHERE Nombre='$_SESSION[usuario]'";
                 </li>
                 <li>
                     <a href="/hj/view//template/personaldata.php">
-                        <i class='bx bxs-message-dots' title="Clientes"></i>
-                        <span class="item">Actualizar Correo</span>
+                    <i class='bx bxs-envelope'></i>
+                        <span class="item">Cambiar Correo</span>
                     </a>
                 </li>
                 <li>
                     <a href="/hj/view//template/personalContra.php">
-                        <i class='bx bxs-message-dots' title="Clientes"></i>
-                        <span class="item">Actualizar Contraseña</span>
+                    <i class='bx bx-key' ></i>
+                        <span class="item">Cambiar Clave</span>
                     </a>
                 </li>
                 <li>
