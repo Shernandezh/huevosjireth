@@ -10,6 +10,10 @@
     width: 100%;
 }
 
+.cancelarboton{
+    text-decoration: none;
+    color: white;
+}
 /*--------------------------------------------------SIDEBAR--------------------------------------------------*/
 .sidebar{
     position: fixed;

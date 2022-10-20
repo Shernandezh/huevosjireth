@@ -29,7 +29,10 @@ if(!isset($_SESSION['usuario'])){
     		<div class="collapse navbar-collapse justify-content-end" id="navbarNav">
       			<ul class="navbar-nav">
 					<li class="nav-item">
-						<a class="nav-link" style="color:black;" href="/hj/view/user-home.php"><b><?php echo $_SESSION['usuario']?></b></a>
+						<a class="nav-link" style="color:black;"><b><?php echo $_SESSION['usuario']?></b></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" style="color:white;" href="/hj/view/user-home.php"> Mis reservas</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" style="color:white;" href="#reservar">Reservar</a>

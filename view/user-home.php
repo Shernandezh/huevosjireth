@@ -44,13 +44,31 @@ $ok3=mysqli_fetch_assoc($result3);
                 <li>
                     <a href="/hj/view/user-home.php">
                         <i class='bx bxs-home' title="Principal"></i>
-                        <span class="item">Principal</span>
+                        <span class="item">Reservas</span>
                     </a>
                 </li>
                 <li>
                     <a href="/hj/view/user-pqrs.php">
                         <i class='bx bxs-message-dots' title="Clientes"></i>
                         <span class="item">PQRS</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/hj/view//template/personaldata.php">
+                        <i class='bx bxs-message-dots' title="Clientes"></i>
+                        <span class="item">Actualizar Correo</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/hj/view//template/personalContra.php">
+                        <i class='bx bxs-message-dots' title="Clientes"></i>
+                        <span class="item">Actualizar Contraseña</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/hj/view/user.php">
+                        <i class='bx bxs-home' title="Principal"></i>
+                        <span class="item">Volver a inicio</span>
                     </a>
                 </li>
             </ul>
@@ -89,6 +107,9 @@ $ok3=mysqli_fetch_assoc($result3);
                         <center>
                             <a href="/hj/model/cancel-reserv2.php?id=<?php echo $row["idReserva"]?>">
                                 <button type="button" class="btn btn-danger btn-sm cr">Cancelar</button>
+                            </a>
+                            <a href="/hj/view/user-edit-reserv.php?id=<?php echo $row["idReserva"]?>">
+                                <button type="button" class="btn btn-warning btn-sm cr">Editar</button>
                             </a>
                         </center>
                     </div>

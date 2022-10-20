@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 20-10-2022 a las 03:10:28
+-- Tiempo de generación: 20-10-2022 a las 16:44:29
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -50,20 +50,20 @@ UNION
 SELECT Producto, COUNT(Producto) FROM reservas WHERE Producto='Huevos Doble Yema' AND Estado='Retirado'$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_DATOSGRAFICO_PARAMETRO_GANACIAS` (IN `FECHAINICIO` VARCHAR(10), IN `FECHAFIN` VARCHAR(10))   SELECT
-productos.Producto,
+productos.Nombre,
 SUM(reservas.Total) AS TOTALVENTAS
 FROM
 reservas
-INNER JOIN productos ON reservas.Producto = productos.Producto
+INNER JOIN productos ON reservas.Producto = productos.Nombre
 WHERE Estado = "Retirado" AND YEAR(reservas.Fecha) BETWEEN FECHAINICIO AND FECHAFIN
 GROUP BY productos.idProducto$$
 
 CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_DATOSGRAFICO_PARAMETRO_UNIDADES` (IN `FECHAINICIO` VARCHAR(10), IN `FECHAFIN` VARCHAR(10))   SELECT
-productos.Producto,
+productos.Nombre,
 SUM(reservas.Cantidad) AS CANTIDAD
 FROM
 reservas 
-INNER JOIN productos ON reservas.Producto = productos.Producto
+INNER JOIN productos ON reservas.Producto = productos.Nombre
 WHERE Estado = "Retirado" AND YEAR(reservas.Fecha) BETWEEN FECHAINICIO AND FECHAFIN
 GROUP BY productos.idProducto$$
 
@@ -114,7 +114,7 @@ CREATE TABLE `productos` (
 INSERT INTO `productos` (`idProducto`, `Nombre`, `Precio`, `Cantidad`, `Descripcion`) VALUES
 (101, 'Huevos Pequeños', 10500, 47, 'Los huevos más pequeños, con el precio más barato y accesibles para nuestros clientes.'),
 (202, 'Huevos Medianos', 15400, 48, 'Huevos de tamaño mediano, económicos con un precio razonable.'),
-(303, 'Huevos Triple A', 18500, 46, 'El huevo más grande que vendemos, cuenta con una clara y yema más grande y alta proteína.'),
+(303, 'Huevos Triple A', 18500, 44, 'El huevo más grande que vendemos, cuenta con una clara y yema más grande y alta proteína.'),
 (404, 'Huevos Doble Yema', 22000, 50, 'Los huevos que contienen doble sorpresa por dentro, los más costosos y con mejor aceptación de nuestros clientes.');
 
 -- --------------------------------------------------------
@@ -142,17 +142,10 @@ CREATE TABLE `reservas` (
 --
 
 INSERT INTO `reservas` (`idReserva`, `Cliente`, `Producto`, `Precio`, `Cantidad`, `Fecha`, `Hora`, `Estado`, `idUsuario`, `idProducto`) VALUES
-(1, 'llamoza', 'Huevos Pequeños', 10500, 1, '2022-10-18', '15:12:07', 'Retirado', NULL, NULL),
-(2, 'llamoza', 'Huevos Medianos', 15400, 2, '2022-10-18', '15:26:39', 'Cancelado', NULL, NULL),
-(3, 'jesus', 'Huevos Doble Yema', 22000, 4, '2022-10-18', '15:26:57', 'Vigente', NULL, NULL),
-(4, 'jesus', 'Huevos Triple A', 18500, 3, '2022-10-18', '15:27:03', 'Cancelado', NULL, NULL),
-(5, 'jesus', 'Huevos Medianos', 15400, 2, '2022-10-18', '15:27:11', 'Vigente', NULL, NULL),
-(6, 'santiago', 'Huevos Pequeños', 10500, 2, '2022-10-18', '15:27:27', 'Retirado', NULL, NULL),
-(7, 'santiago', 'Huevos Triple A', 18500, 2, '2022-10-18', '15:27:33', 'Vigente', NULL, NULL),
-(8, 'yeison', 'Huevos Doble Yema', 22000, 5, '2022-10-18', '15:27:50', 'Cancelado', NULL, NULL),
-(9, 'yeison', 'Huevos Triple A', 18500, 4, '2022-10-18', '15:27:57', 'Retirado', NULL, NULL),
-(10, 'yeison', 'Huevos Medianos', 15400, 2, '2022-10-18', '15:28:04', 'Retirado', NULL, NULL),
-(11, 'llamoza', 'Huevos Medianos', 15400, 3, '2022-10-19', '19:39:08', 'Cancelado', NULL, NULL);
+(14, 'Santiago', 'Huevos Pequeños', 10500, 5, '2022-10-20', '09:07:17', 'Vigente', NULL, NULL),
+(16, 'julio', 'Huevos Pequeños', 10500, 4, '2022-10-20', '09:19:35', 'Vigente', NULL, NULL),
+(17, 'jesus', 'Huevos Pequeños', 10500, 3, '2022-10-20', '09:20:29', 'Cancelado', NULL, NULL),
+(18, 'jesus', 'Huevos Pequeños', 10500, 3, '2022-10-20', '09:26:00', 'Vigente', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -194,9 +187,11 @@ CREATE TABLE `usuarios` (
 INSERT INTO `usuarios` (`idUsuario`, `Nombre`, `Correo`, `Contraseña`, `idRol`) VALUES
 (1, 'guzman', 'guzman@gmail.com', '82a844967e7a71871447348bea08c9226d4cc9f280f2ba5c383ec75ba997afa0c335275fa2b8eb41785613090d0357e82e1cc0e0cacaddd02197d70b40a4320c', 1),
 (2, 'llamoza', 'llamoza@gmail.com', '3c9909afec25354d551dae21590bb26e38d53f2173b8d3dc3eee4c047e7ab1c1eb8b85103e3be7ba613b31bb5c9c36214dc9f14a42fd7a2fdb84856bca5c44c2', 2),
-(3, 'jesus', 'jesus@gmail.com', '3c9909afec25354d551dae21590bb26e38d53f2173b8d3dc3eee4c047e7ab1c1eb8b85103e3be7ba613b31bb5c9c36214dc9f14a42fd7a2fdb84856bca5c44c2', 2),
-(4, 'santiago', 'santiago@gmail.com', '3c9909afec25354d551dae21590bb26e38d53f2173b8d3dc3eee4c047e7ab1c1eb8b85103e3be7ba613b31bb5c9c36214dc9f14a42fd7a2fdb84856bca5c44c2', 2),
-(5, 'yeison', 'yeison@gmail.com', '3c9909afec25354d551dae21590bb26e38d53f2173b8d3dc3eee4c047e7ab1c1eb8b85103e3be7ba613b31bb5c9c36214dc9f14a42fd7a2fdb84856bca5c44c2', 2);
+(5, 'yeison', 'yeison@gmail.com', '3c9909afec25354d551dae21590bb26e38d53f2173b8d3dc3eee4c047e7ab1c1eb8b85103e3be7ba613b31bb5c9c36214dc9f14a42fd7a2fdb84856bca5c44c2', 2),
+(6, 'Andres Felipe Llamoza', 'andres.llamoza@misena.edu.co', 'a89d0f82c48766e4df072e1825efa8d44811126fce3a004f478905d650920ec3becadbc339eef0e3d33aec3a63278e2e22d7156760d40863b67348c5439e4c34', 1),
+(7, 'Julio', 'juliocesar123456789@gmail.com', '3c9909afec25354d551dae21590bb26e38d53f2173b8d3dc3eee4c047e7ab1c1eb8b85103e3be7ba613b31bb5c9c36214dc9f14a42fd7a2fdb84856bca5c44c2', 2),
+(9, 'Santiago', 'shernandez136@misena.edu.co', '3c9909afec25354d551dae21590bb26e38d53f2173b8d3dc3eee4c047e7ab1c1eb8b85103e3be7ba613b31bb5c9c36214dc9f14a42fd7a2fdb84856bca5c44c2', 2),
+(10, 'jesus', 'jesusmva@gmail.com', '3c9909afec25354d551dae21590bb26e38d53f2173b8d3dc3eee4c047e7ab1c1eb8b85103e3be7ba613b31bb5c9c36214dc9f14a42fd7a2fdb84856bca5c44c2', 2);
 
 --
 -- Índices para tablas volcadas
@@ -250,13 +245,13 @@ ALTER TABLE `mensajes`
 -- AUTO_INCREMENT de la tabla `reservas`
 --
 ALTER TABLE `reservas`
-  MODIFY `idReserva` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `idReserva` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `idUsuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Restricciones para tablas volcadas

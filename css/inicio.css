@@ -10,7 +10,6 @@
     --fondo:linear-gradient(#ff9710, #fdac50);
 }
 .productos{
-    display: flex;
     display: grid;
     grid-template-columns: 1fr 1fr;
     justify-items: center;

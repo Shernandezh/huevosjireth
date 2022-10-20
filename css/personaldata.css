@@ -1,0 +1,95 @@
+.dataP{
+    display: grid;
+    width: 100%;
+    grid-template-columns: 50%;
+    place-content: center;
+    margin-top: 100px;
+}
+
+.formuG{
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.6)), url(/hj/images/bg_huevos1.jpg);
+    background-size: cover;
+    display: grid;
+    padding: 25px;
+    gap: 15px;
+    border-radius: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.formuG h2{
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.formuG p{
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+input[type="submit"]{
+    width: max-content;
+    padding: 15px;
+    background-image: radial-gradient(circle, #ffb100, #ffc400, #ffd800, #fbeb00, #f4ff00);
+    border: 2px #ffa600 solid;
+    border-radius: 20px;
+    color: white;
+    background: transparent;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+input[type="submit"]:hover{
+    background-color: #fb8e00;
+    border: 2px gainsboro solid;
+    transition: all .7s;
+}
+
+input[type="email"]{
+    width: 100%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 7px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+}
+
+input[type="password"]{
+    width: 100%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 7px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+}
+
+@media screen and (max-width:900px) {
+
+    .dataP{
+        grid-template-columns: 60%;
+    }
+    
+}
+
+
+@media screen and (max-width:700px) {
+
+    .dataP{
+        grid-template-columns: 70%;
+    }
+    
+}
+
+@media screen and (max-width:450px) {
+
+    .dataP{
+        grid-template-columns: 75%;
+    }
+    
+}
+
+@media screen and (max-width:300px) {
+
+    .dataP{
+        grid-template-columns: 82%;
+    }
+    
+}
